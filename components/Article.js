@@ -146,3 +146,7 @@ function articleMaker({title, date, firstPar, secondPar, thirdPar,}) {
 return art
 }
 
+data.forEach(artData => {
+  const dataComponent = articleMaker(artData)
+  body.appendChild(dataComponent)
+})
