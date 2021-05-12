@@ -33,11 +33,28 @@ let menuItems = [
 */
 
 const header = document.querySelector('.header');
-const menuBtn = document.querySelector('.menu-button');
+const mBtn = document.querySelector('.menu-button');
 
 function menuMaker() {
   const mDiv = document.createElement('div');
   const listCreate = document.createElement('ul');
 
   mDiv.appendChild(listCreate);
+
+  menuItems.forEach((element) => {
+    const item = document.createElement('li');
+    item.textContent = element;
+    listCreate.appendChild(item);
+    item.style.cursor = 'pointer';
+  });
+
+  mDiv.classList.add('menu');
+
+  mBtn.addEventListener('click', (event) => {
+    mDiv.classList.toggle('menu--open');
+  });
+
+  return mDiv;
 }
+
+header.appendChild(menuMaker());
