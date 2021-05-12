@@ -86,7 +86,16 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+{
+  title: 'Stream of Consciousness',
+  date: 'Jan 21st, 2042',
+  firstParagraph: `Stream of consciousness is a narrative device that attempts to give the written equivalent of the character's thought processes, either in a loose interior monologue (see below), or in connection to his or her actions.`,
+
+  secondParagraph: `Stream-of-consciousness writing is usually regarded as a special form of interior monologue and is characterized by associative leaps in thought and lack some or all punctuation.`,
+
+  thirdParagraph: `Stream of consciousness and interior monologue are distinguished from dramatic monologue and soliloquy, where the speaker is addressing an audience or a third person, which are chiefly used in poetry or drama.`
+  },
 ];
 
 /*
