@@ -115,17 +115,14 @@ const data = [
 
   const body = document.querySelector('body');
 
-function articleMaker({title, date, firstPar, secondPar, thirdPar,}) {
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
   const art = document.createElement('div');
-  art.classList.add('article');
   const artTitle = document.createElement('h2');
   const artDate = document.createElement ('p');
-  artDate.classList.add('date');
   const par1 = document.createElement('p');
   const par2 = document.createElement('p');
   const par3 = document.createElement('p');
   const expandBtn = document.createElement('span');
-  expandBtn.classList.add('expandButton');
 
   art.appendChild(artTitle);
   art.appendChild(artDate);
@@ -134,11 +131,16 @@ function articleMaker({title, date, firstPar, secondPar, thirdPar,}) {
   art.appendChild(par3);
   art.appendChild(expandBtn);
 
+  art.classList.add('article');
+  artDate.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
   artTitle.textContent = title;
   artDate.textContent = date;
-  par1.textContent = firstPar;
-  par2.textContent = secondPar;
-  par3.textContent = thirdPar;
+  par1.textContent = firstParagraph;
+  par2.textContent = secondParagraph;
+  par3.textContent = thirdParagraph;
+  expandBtn.textContent = '+';
 
   expandBtn.addEventListener('click', (event) => {
     art.classList.toggle('article-open');
