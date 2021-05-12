@@ -134,6 +134,11 @@ function articleMaker({title, date, firstPar, secondPar, thirdPar,}) {
   art.appendChild(par3);
   art.appendChild(expandBtn);
 
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  par1.textContent = firstPar;
+  par2.textContent = secondPar;
+  par3.textContent = thirdPar;
 
 }
 
