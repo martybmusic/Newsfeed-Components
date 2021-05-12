@@ -140,5 +140,9 @@ function articleMaker({title, date, firstPar, secondPar, thirdPar,}) {
   par2.textContent = secondPar;
   par3.textContent = thirdPar;
 
+  expandBtn.addEventListener('click', (event) => {
+    art.classList.toggle('article-open');
+  })
+return art
 }
 
