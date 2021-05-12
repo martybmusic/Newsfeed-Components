@@ -86,14 +86,22 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+{
+  title: 'Stream of Consciousness',
+  date: 'Jan 21st, 2042',
+  firstParagraph: `Stream of consciousness is a narrative device that attempts to give the written equivalent of the character's thought processes, either in a loose interior monologue (see below), or in connection to his or her actions.`,
+
+  secondParagraph: `Stream-of-consciousness writing is usually regarded as a special form of interior monologue and is characterized by associative leaps in thought and lack some or all punctuation.`,
+
+  thirdParagraph: `Stream of consciousness and interior monologue are distinguished from dramatic monologue and soliloquy, where the speaker is addressing an audience or a third person, which are chiefly used in poetry or drama.`
+  },
 ];
 
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
   and returns a DOM node looking like the one below:
-
   <div class="article">
     <h2>{title of the article}</h2>
     <p class="date">{date of the article}</p>
@@ -101,16 +109,55 @@ const data = [
     {three separate paragraph elements}
 
     <span class="expandButton">+</span>
-  </div>
+  </div> */
 
-  Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  This listener should toggle the class 'article-open' on div.article.
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
 
-  Step 3: Don't forget to return something from your function!
+  // Step 3: Don't forget to return something from your function!
 
-  Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-  to create a div.article element and append it to the DOM inside div.articles (see index.html).
+  // Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
+  // to create a div.article element and append it to the DOM inside div.articles (see index.html).
 
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
+  // Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  // Refresh the page to see the new article.
+
+  const body = document.querySelector('body');
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const art = document.createElement('div');
+  const artTitle = document.createElement('h2');
+  const artDate = document.createElement ('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const expandBtn = document.createElement('span');
+
+  art.appendChild(artTitle);
+  art.appendChild(artDate);
+  art.appendChild(par1);
+  art.appendChild(par2);
+  art.appendChild(par3);
+  art.appendChild(expandBtn);
+
+  art.classList.add('article');
+  artDate.classList.add('date');
+  expandBtn.classList.add('expandButton');
+
+  artTitle.textContent = title;
+  artDate.textContent = date;
+  par1.textContent = firstParagraph;
+  par2.textContent = secondParagraph;
+  par3.textContent = thirdParagraph;
+  expandBtn.textContent = '+';
+
+  expandBtn.addEventListener('click', (event) => {
+    art.classList.toggle('article-open');
+  })
+return art
+}
+
+data.forEach(artData => {
+  const dataComponent = articleMaker(artData)
+  body.appendChild(dataComponent)
+})
